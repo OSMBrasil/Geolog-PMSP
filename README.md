@@ -20,6 +20,8 @@ Steps to generate a GEOLOG map locally:
 
 * Symlink to TileMill 
 
-```ln -s ~/your-repo-dir/Geolog-PMSP/TileMill ~/Documents/MapBox/project/Geolog-PMSP```
+```bash
+ln -s ~/your-repo-dir/Geolog-PMSP/TileMill ~/Documents/MapBox/project/Geolog-PMSP
+```
 
-* Download and expand [GEOLOG zip](http://www.prefeitura.sp.gov.br/cidade/secretarias/upload/desenvolvimento_urbano/dados_estatisticos/arquivos/20131203_geolog.zip) to `~/your-repo-dir/Geolog-PMSP/TileMill/data` 
+* Download and expand [GEOLOG zip](http://www.prefeitura.sp.gov.br/cidade/secretarias/upload/desenvolvimento_urbano/dados_estatisticos/arquivos/20131203_geolog.zip) to `~/your-repo-dir/Geolog-PMSP/TileMill/data`.
