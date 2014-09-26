@@ -25,3 +25,6 @@ ln -s ~/your-repo-dir/Geolog-PMSP/TileMill ~/Documents/MapBox/project/Geolog-PMS
 ```
 
 * Download and expand [GEOLOG zip](http://www.prefeitura.sp.gov.br/cidade/secretarias/upload/desenvolvimento_urbano/dados_estatisticos/arquivos/20131203_geolog.zip) to `~/your-repo-dir/Geolog-PMSP/TileMill/data`.
+
+* Open the GEOLOG project in TileMill.
+
