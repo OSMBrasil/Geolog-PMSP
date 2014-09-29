@@ -7,7 +7,6 @@ This repository holds files for the import of road infrastructure of the City of
 * [GEOLOG dataset](http://www.prefeitura.sp.gov.br/cidade/secretarias/upload/desenvolvimento_urbano/dados_estatisticos/arquivos/20131203_geolog.zip)
 * [GEOLOG map](https://api.tiles.mapbox.com/v4/mapaslivres.hnhcwhfr/page.html?access_token=pk.eyJ1IjoibWFwYXNsaXZyZXMiLCJhIjoidmVxbkRhRSJ9.fe8NAiiw9ACGjVgGgowbgg)
 
-
 ## Import plan
 
 The plan is still in early stage, but the ideia is to generate a map layer with GEOLOG data, allowing collaborators to draw over it, using JOSM or iD. The progress will be tracked using OSM Task Manager.
@@ -16,15 +15,11 @@ The plan is still in early stage, but the ideia is to generate a map layer with 
 
 Steps to generate a GEOLOG map locally:
 
-* Clone this repository locally;
+1. Clone this repository locally;
 
-* Symlink to TileMill 
+2. Symlink to TileMill:
+ `ln -s ~/your-repo-dir/Geolog-PMSP/TileMill ~/Documents/MapBox/project/Geolog-PMSP`
 
-```bash
-ln -s ~/your-repo-dir/Geolog-PMSP/TileMill ~/Documents/MapBox/project/Geolog-PMSP
-```
+3. Download and expand [GEOLOG zip](http://www.prefeitura.sp.gov.br/cidade/secretarias/upload/desenvolvimento_urbano/dados_estatisticos/arquivos/20131203_geolog.zip) to `~/your-repo-dir/Geolog-PMSP/TileMill/data`.
 
-* Download and expand [GEOLOG zip](http://www.prefeitura.sp.gov.br/cidade/secretarias/upload/desenvolvimento_urbano/dados_estatisticos/arquivos/20131203_geolog.zip) to `~/your-repo-dir/Geolog-PMSP/TileMill/data`.
-
-* Open the GEOLOG project in TileMill.
-
+4. Open the GEOLOG project in TileMill.
