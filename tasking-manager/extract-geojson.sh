@@ -54,14 +54,14 @@ case "$1" in
     ;;
   quadras)
     quadras211
-    quadras212
+    #quadras212
     ;;
   setores)
     setores
     ;;
   *)
     echo "Help:"
-    echo "      bash extract-geojson.sh [ logradouros | quadras[211|212] | setores ]"
+    echo "      bash extract-geojson.sh [ logradouros | quadras | setores ]"
     echo
     echo "Cuidado! Ele substitui arquivos data/*.geojson"
     ;;
