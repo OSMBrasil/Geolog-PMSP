@@ -10,6 +10,7 @@
 
 import json, geojson
 
+from geojson import Feature, FeatureCollection
 from shapely.ops import cascaded_union
 from shapely.geometry import mapping, shape, Point, LineString
 
@@ -45,21 +46,12 @@ for spot1 in spots:
 #            sfinal = spot1.difference(spot2)
     patches.append(sfinal)
 
-s = ""
+features = []
 for p in patches:
-    s += """
-    {
-      "type": "Feature",
-      "properties": {},
-      "geometry": %s
-    },""" % str(json.dumps(mapping(p)))
+    f = Feature(geometry=p)
+    f.pop('id', None)
+    features.append(f)
 
-s = s[0:-1]  # excluindo a vírgula
+fc = FeatureCollection(features)
 
-print """
-{
-  "type": "FeatureCollection",
-  "features": [
-%s
-  ]
-}""" % s
+print(geojson.dumps(fc))
