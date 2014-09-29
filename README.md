@@ -17,8 +17,8 @@ Steps to generate a GEOLOG map locally:
 
 1. Clone this repository locally;
 
-2. Symlink to TileMill:
- `ln -s ~/your-repo-dir/Geolog-PMSP/TileMill ~/Documents/MapBox/project/Geolog-PMSP`
+2. Symlink to TileMill:<br/>
+`ln -s ~/your-repo-dir/Geolog-PMSP/TileMill ~/Documents/MapBox/project/Geolog-PMSP`
 
 3. Download and expand [GEOLOG zip](http://www.prefeitura.sp.gov.br/cidade/secretarias/upload/desenvolvimento_urbano/dados_estatisticos/arquivos/20131203_geolog.zip) to `~/your-repo-dir/Geolog-PMSP/TileMill/data`.
 
