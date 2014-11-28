@@ -1,25 +1,33 @@
+![snapshot](https://github.com/OSMBrasil/Geolog-PMSP/raw/master/data-snapshot.png)
+
 ## Geolog Import
 
-This repository holds files for the import of road infrastructure of the City of São Paulo to OpenStreetMap.
+Import of street network data from *Prefeitura de São Paulo*.
 
 * [Import page at OpenStreetMap's wiki](https://wiki.openstreetmap.org/wiki/Geolog_PMSP_Import)
 * [Data page at City of São Paulo site](http://www.prefeitura.sp.gov.br/cidade/secretarias/desenvolvimento_urbano/dados_estatisticos/index.php?p=160798)
 * [GEOLOG dataset](http://www.prefeitura.sp.gov.br/cidade/secretarias/upload/desenvolvimento_urbano/dados_estatisticos/arquivos/20131203_geolog.zip)
 * [GEOLOG map](https://api.tiles.mapbox.com/v4/mapaslivres.hnhcwhfr/page.html?access_token=pk.eyJ1IjoibWFwYXNsaXZyZXMiLCJhIjoidmVxbkRhRSJ9.fe8NAiiw9ACGjVgGgowbgg)
 
-## Import plan
+## Strategy
 
-The plan is still in early stage, but the ideia is to generate a map layer with GEOLOG data, allowing collaborators to draw over it, using JOSM or iD. The progress will be tracked using OSM Task Manager.
+The dataset contains vectorial information about the street network of São Paulo. Each street segment has its name, postal codes and addresses ranges for both sides of the street.
 
-## TileMill map
+As São Paulo has already good street network coverage on OpenStreetMap, so the import will be focused on fixing street names and improving addressing.
 
-Steps to generate a GEOLOG map locally:
+The import will be mostly manual, probably using Tasking Manager or another way to monitor progress.
 
-1. Clone this repository locally;
+## The Data
 
-2. Symlink to TileMill:<br/>
-`ln -s ~/your-repo-dir/Geolog-PMSP/TileMill ~/Documents/MapBox/project/Geolog-PMSP`
+The target file is `DEINFO_SEGTOS_212.shp`. It comes originally with a coordinate reference system that seems to be wrong. A better alignment can be reached by using following proj4 parameters:
 
-3. Download and expand [GEOLOG zip](http://www.prefeitura.sp.gov.br/cidade/secretarias/upload/desenvolvimento_urbano/dados_estatisticos/arquivos/20131203_geolog.zip) to `~/your-repo-dir/Geolog-PMSP/TileMill/data`.
+    +proj=utm +zone=23 +south +ellps=aust_SA +towgs84=-86.35,3.88,-38.22,0,0,0,0 +units=m +no_defs
 
-4. Open the GEOLOG project in TileMill.
+## Current Status
+
+We are working on finding a way to generate address ranges from the shapefile.
+
+Next steps:
+
+* Document a way to import the data to PostGIS
+* Develop a scrip to generate [address interpolation ways](http://wiki.openstreetmap.org/wiki/Interpolation#Using_interpolation)
